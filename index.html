@@ -34,6 +34,9 @@
         <a href="./index.html" class="logo-link"
           >Web<span class="logo-link-span">Studio</span></a
         >
+
+        <!-- Навигация и адрес будут скрыты на мобилке -->
+
         <nav class="navigation">
           <ul class="nav-list">
             <li class="nav-item">
@@ -47,7 +50,7 @@
             </li>
           </ul>
         </nav>
-        <address>
+        <address class="header-address">
           <ul class="contacts-list">
             <li>
               <a href="mailto:info@devstudio.com" class="link-address"
@@ -61,6 +64,13 @@
             </li>
           </ul>
         </address>
+
+        <!-- Кнопка открытия мобильного меню (видима только на мобилке) -->
+        <button type="button" class="menu-open-btn" data-menu-open>
+          <svg class="menu-open-icon" width="24" height="24">
+            <use href="./images/icons.svg#icon-menu-hamburger"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -696,6 +706,74 @@
 
           <button type="submit" class="button modal-submit-btn">Send</button>
         </form>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" data-menu>
+      <div class="container mobile-menu-container">
+        <button type="button" class="menu-close-btn" data-menu-close>
+          <svg width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li>
+              <a href="./index.html" class="mobile-nav-link current">Studio</a>
+            </li>
+            <li><a href="" class="mobile-nav-link">Portfolio</a></li>
+            <li><a href="" class="mobile-nav-link">Contacts</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-contacts-wrap">
+          <address class="mobile-contacts">
+            <ul class="mobile-contacts-list">
+              <li>
+                <a href="tel:+110001111111" class="mobile-contacts-link accent"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@devstudio.com" class="mobile-contacts-link"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+          </address>
+          <ul class="mobile-social-list">
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="mobile-social-item">
+              <a href="" class="mobile-social-link">
+                <svg class="mobile-social-icon" width="24" height="24">
+                  <use href="./images/icons.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
