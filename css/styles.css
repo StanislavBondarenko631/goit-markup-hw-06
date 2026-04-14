@@ -538,49 +538,40 @@ p {
   fill: #f4f4fd;
 }
 
-.section-our-portfolio {
-  padding: 120px 0;
+/* Our Portfolio (Mobile: 320px+) */
+.portfolio {
+  padding: 96px 0;
 }
 
-.our-portfolio {
-  text-align: center;
-  font-weight: 700;
+.portfolio-title {
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: capitalize;
   color: #2e2f42;
-
   margin-bottom: 72px;
 }
 
 .portfolio-list {
   display: flex;
-  /* Позволяет карточкам падать на новый ряд */
-  flex-wrap: wrap;
-  /* Расстояние между колонками */
-  column-gap: 24px;
-  /* Расстояние между рядами по вертикали */
-  row-gap: 48px;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+  gap: 48px;
 }
 
-.portfolio-list-item {
-  width: calc((100% - 48px) / 3);
-  /* 1. Добавляем плавный переход для тени */
+.portfolio-item {
+  width: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*  2. Добавляем саму тень при наведении */
-
-.portfolio-list-item:hover,
-.portfolio-list-item:focus {
+.portfolio-item:hover {
   box-shadow:
     0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* Оверлей (Пункт D1) — работает везде */
 .portfolio-thumb {
   position: relative;
   overflow: hidden;
@@ -595,47 +586,50 @@ p {
   background-color: #4d5ae5;
   color: #f4f4fd;
   padding: 40px 32px;
-
-  /* Начальное положение — полностью внизу за пределами видимости */
   transform: translateY(100%);
-  /* Анимация только трансформации */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
-/* Появление при ховере на ВСЮ карточку */
-.portfolio-list-item:hover .portfolio-overlay,
-.portfolio-list-item:focus .portfolio-overlay {
+.portfolio-item:hover .portfolio-overlay {
   transform: translateY(0);
 }
 
-.our-portfolio-title {
-  text-align: left;
-  font-weight: 500;
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  color: #2e2f42;
-
-  margin: 0 0 8px 0;
-}
-
-.our-portfolio-article {
-  margin: 0;
-}
-
-.portfolio-info {
+.portfolio-content {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
 }
 
-/* Убираем лишний margin у параграфа, чтобы padding снизу отработал точно 32px */
-.our-portfolio-article {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
+/* --- TABLET (768px+) --- */
+@media screen and (min-width: 768px) {
+  .portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 24px) / 2); /* Сетка 2 колонки */
+  }
+}
+
+/* --- DESKTOP (1158px+) --- */
+@media screen and (min-width: 1158px) {
+  .portfolio {
+    padding: 120px 0;
+  }
+
+  .portfolio-list {
+    column-gap: 24px;
+    row-gap: 48px;
+  }
+
+  .portfolio-item {
+    width: calc((100% - 48px) / 3); /* Сетка 3 колонки */
+  }
 }
 
 /* ----- footer------ */
