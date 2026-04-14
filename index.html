@@ -75,13 +75,13 @@
     </header>
 
     <main>
-      <section class="hero-background">
+      <section class="hero">
         <div class="container">
-          <h1 class="hero-text">Effective Solutions for Your Business</h1>
+          <h1 class="hero-title">Effective Solutions for Your Business</h1>
           <button type="button" class="button">Order Service</button>
         </div>
       </section>
-      <section class="our-features">
+      <section class="features">
         <div class="container">
           <h2 class="visually-hidden">Our Features</h2>
           <ul class="features-list">
@@ -91,7 +91,7 @@
                   <use href="./images/icons.svg#Strategy"></use>
                 </svg>
               </div>
-              <h3 class="our-features-title">Strategy</h3>
+              <h3 class="features-subtitle">Strategy</h3>
               <p class="features-text">
                 Our goal is to identify the business problem to walk away with
                 the perfect and creative solution.
@@ -103,7 +103,7 @@
                   <use href="./images/icons.svg#Punctuality"></use>
                 </svg>
               </div>
-              <h3 class="our-features-title">Punctuality</h3>
+              <h3 class="features-subtitle">Punctuality</h3>
               <p class="features-text">
                 Bring the key message to the brand's audience for the best price
                 within the shortest possible time.
@@ -115,7 +115,7 @@
                   <use href="./images/icons.svg#Diligence"></use>
                 </svg>
               </div>
-              <h3 class="our-features-title">Diligence</h3>
+              <h3 class="features-subtitle">Diligence</h3>
               <p class="features-text">
                 Research and confirm brands with the strongest digital growth
                 opportunities and minimize risk.
@@ -127,7 +127,7 @@
                   <use href="./images/icons.svg#Technologies"></use>
                 </svg>
               </div>
-              <h3 class="our-features-title">Technologies</h3>
+              <h3 class="features-subtitle">Technologies</h3>
               <p class="features-text">
                 Design practice focused on digital experiences. We bring forth a
                 deep passion for problem-solving.
@@ -136,11 +136,11 @@
           </ul>
         </div>
       </section>
-      <section class="section-our-team">
-        <div class="container">
-          <h2 class="our-team">Our Team</h2>
-          <ul class="list-our-team">
-            <li class="team-card-backgrounds">
+      <section class="team">
+        <div class="container team-container">
+          <h2 class="team-title">Our Team</h2>
+          <ul class="team-list">
+            <li class="team-item">
               <img
                 src="./images/imges1.jpg"
                 alt="photo Product Designer"
@@ -148,8 +148,8 @@
                 height="260"
               />
               <div class="team-content">
-                <h3 class="team">Mark Guerrero</h3>
-                <p class="department">Product Designer</p>
+                <h3 class="team-member">Mark Guerrero</h3>
+                <p class="team-role">Product Designer</p>
 
                 <ul class="team-social-list">
                   <li class="team-social-item">
@@ -204,7 +204,7 @@
               </div>
             </li>
 
-            <li class="team-card-backgrounds">
+            <li class="team-item">
               <img
                 src="./images/img.4.jpg"
                 alt="photo Frontend Developer"
@@ -212,8 +212,8 @@
                 height="260"
               />
               <div class="team-content">
-                <h3 class="team">Tom Ford</h3>
-                <p class="department">Frontend Developer</p>
+                <h3 class="team-member">Tom Ford</h3>
+                <p class="team-role">Frontend Developer</p>
 
                 <ul class="team-social-list">
                   <li class="team-social-item">
@@ -268,7 +268,7 @@
               </div>
             </li>
 
-            <li class="team-card-backgrounds">
+            <li class="team-item">
               <img
                 src="./images/img.2.jpg"
                 alt="photo Marketing"
@@ -276,8 +276,8 @@
                 height="260"
               />
               <div class="team-content">
-                <h3 class="team">Camila Garcia</h3>
-                <p class="department">Marketing</p>
+                <h3 class="team-member">Camila Garcia</h3>
+                <p class="team-role">Marketing</p>
 
                 <ul class="team-social-list">
                   <li class="team-social-item">
@@ -332,7 +332,7 @@
               </div>
             </li>
 
-            <li class="team-card-backgrounds">
+            <li class="team-item">
               <img
                 src="./images/img.3.jpg"
                 alt="photo UI Designer"
@@ -340,8 +340,8 @@
                 height="260"
               />
               <div class="team-content">
-                <h3 class="team">Daniel Wilson</h3>
-                <p class="department">UI Designer</p>
+                <h3 class="team-member">Daniel Wilson</h3>
+                <p class="team-role">UI Designer</p>
 
                 <ul class="team-social-list">
                   <li class="team-social-item">
@@ -615,6 +615,7 @@
         </div>
       </div>
     </footer>
+
     <div class="backdrop" data-modal>
       <div class="modal">
         <button type="button" class="modal-close-btn" data-modal-close>
@@ -710,7 +711,7 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu is-open" data-menu>
+    <div class="mobile-menu" data-menu>
       <div class="container mobile-menu-container">
         <button type="button" class="menu-close-btn" data-menu-close>
           <svg width="8" height="8">
