@@ -784,10 +784,11 @@ button {
     gap: 72px 24px;
   }
 
+  .footer-info {
+    text-align: start;
+  }
+
   .footer-logo {
-    /* Позволяет margin-bottom работать правильно */
-    /* display: inline-block; */
-    /* Тот самый отступ 16px до текста */
     margin-bottom: 16px;
     padding: 0;
   }
