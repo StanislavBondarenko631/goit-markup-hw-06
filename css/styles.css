@@ -814,6 +814,10 @@ button {
   .footer-subscribe-input {
     width: 264px;
   }
+
+  .footer-info .footer-subscribe-form {
+    width: 768px;
+  }
 }
 
 /* --- DESKTOP (1158px+) --- */
@@ -826,6 +830,10 @@ button {
     padding-left: 15px; /* Сбрасываем планшетный паддинг */
     flex-wrap: nowrap; /* Всё в одну линию */
     gap: 0;
+  }
+
+  .footer-info {
+    margin-right: 120px;
   }
 
   .footer-logo {
@@ -850,6 +858,10 @@ button {
 
   .footer-subscribe {
     margin-left: auto;
+  }
+
+  .footer-info .footer-subscribe-form {
+    width: 453px;
   }
 }
 
