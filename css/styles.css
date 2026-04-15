@@ -88,7 +88,8 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   color: #4d5ae5;
-  padding: 16px 0; /* На мобилке хедер чуть компактнее */
+  /* На мобилке хедер чуть компактнее */
+  padding: 16px 0;
 }
 
 .logo-link-span {
@@ -657,7 +658,7 @@ button {
 
 .footer-logo {
   display: inline-block;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -791,10 +792,11 @@ button {
     padding: 0;
   }
 
-  .footer-info {
+  /* Уменьшаем огромный маржин */
+  /* .footer-info {
     text-align: left;
-    margin-right: 24px; /* Уменьшаем огромный маржин */
-  }
+    margin-right: 24px; 
+  } */
 
   .footer-social-media {
     text-align: left;
