@@ -121,9 +121,10 @@ button {
     display: none; /* Прячем бургер */
   }
 
-  .navigation,
-  .header-address {
-    display: block; /* Показываем меню и контакты */
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
   }
 
   .logo-link {
@@ -131,9 +132,14 @@ button {
     margin-right: 120px;
   }
 
-  .nav-list {
-    display: flex;
-    gap: 40px;
+  .header-address {
+    font-style: normal;
+    margin-left: auto;
+  }
+
+  .navigation,
+  .header-address {
+    display: block; /* Показываем меню и контакты */
   }
 
   .link-nav {
@@ -144,6 +150,13 @@ button {
     text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+  }
+
+  /* На планшете контакты идут в колонку по макету GoIT */
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .link-nav:hover,
@@ -164,24 +177,12 @@ button {
     background-color: #404bbf;
   }
 
-  .header-address {
-    font-style: normal;
-    margin-left: auto;
-  }
-
-  /* На планшете контакты идут в колонку по макету GoIT */
-  .contacts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
   .link-address {
+    display: block;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #434455;
-    text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
@@ -195,13 +196,20 @@ button {
   /* На десктопе контакты снова в строку */
   .contacts-list {
     flex-direction: row;
+    align-items: center;
     gap: 40px;
   }
 
   .link-address {
+    padding: 24px 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+  }
+
+  .link-address:hover,
+  .link-address:focus {
+    color: #404bbf;
   }
 }
 
@@ -805,15 +813,12 @@ button {
   .footer-subscribe-form {
     display: flex;
     flex-direction: row;
+    width: 100%;
     gap: 24px; /* Расстояние между инпутом и кнопкой */
   }
 
   .footer-subscribe-input {
     width: 264px;
-  }
-
-  .footer-info .footer-subscribe-form {
-    width: 768px;
   }
 }
 
@@ -862,6 +867,7 @@ button {
   }
 }
 
+/* ------ BACKDROP ------ */
 .backdrop {
   position: fixed;
   top: 0;
@@ -883,20 +889,32 @@ button {
   pointer-events: auto;
 }
 
+/* ------ MODAL WINDOW ------ */
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 408px;
+  transform: translate(-50%, -50%) scale(0.9);
+
+  /* РЕЗИНОВАЯ ШИРИНА ДЛЯ МОБИЛКИ */
+  width: calc(100% - 32px); /* отступы по 16px */
+  max-width: 288px; /* как в макете */
+
   min-height: 584px;
+
   background-color: #fcfcfc;
   box-shadow:
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 72px 24px 24px 24px;
+
+  padding: 72px 16px 24px 16px;
+
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -978,7 +996,7 @@ button {
 /* --- Textarea --- */
 .modal-checkbox-label {
   display: flex; /* Выравнивает иконку и текст в ряд */
-  align-items: center; /* Центрирует галочку по высоте текста */
+  align-items: center;
 
   font-size: 12px;
   line-height: 1.17;
@@ -990,10 +1008,10 @@ button {
 .privacy-link {
   color: #4d5ae5;
   text-decoration: underline;
-  margin-left: 4px; /* Чтобы "the" и "Privacy" не слипались */
 }
 
 .modal-custom-checkbox {
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   margin-right: 8px;
@@ -1004,6 +1022,7 @@ button {
   justify-content: center;
   /* Важно: фон прозрачный */
   background-color: transparent;
+  fill: transparent;
 
   /* Добавляем transition для плавности */
   transition:
@@ -1053,29 +1072,8 @@ button {
   position: relative;
 }
 
-.modal-input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  background-color: transparent;
-  padding-left: 38px;
-  outline: transparent; /* Убираем стандартную рамку браузера */
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .modal-input:focus {
   border-color: #4d5ae5;
-}
-
-.modal-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  fill: #2e2f42;
-  /* Плавный переход для иконки */
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Изменение цвета иконки при фокусе на инпуте */
@@ -1139,6 +1137,24 @@ button {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-checkbox:focus + .modal-checkbox-label .modal-custom-checkbox {
+  border-color: #4d5ae5;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 408px;
+    width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .modal {
+    max-width: 408px;
+  }
+}
+
 /* CSS для мобильного меню */
 .mobile-menu {
   position: fixed;
@@ -1147,15 +1163,20 @@ button {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  z-index: 999;
 
-  /* Скрыто по умолчанию */
-  transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu.is-open {
-  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-container {
@@ -1168,13 +1189,11 @@ button {
 }
 
 .mobile-nav {
-  /* Навигация остается вверху */
-  margin-bottom: 40px;
+  margin-bottom: auto;
 }
 
+/* Контакты и соцсети прижаты к низу */
 .mobile-contacts-wrap {
-  /* Вот этот параметр толкает блок в самый низ, 
-     но только в пределах вьюпорта */
   margin-top: auto;
 }
 
