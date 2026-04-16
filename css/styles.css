@@ -790,10 +790,18 @@ button {
 
 @media screen and (min-width: 768px) {
   .footer-container {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    width: 584px;
+
+    margin: 0 auto;
+
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap; /* Позволяет блокам переноситься */
     align-items: baseline;
-    padding-left: 108px; /* Отступ по макету для планшета */
+
     gap: 72px 24px;
   }
 
@@ -834,7 +842,10 @@ button {
   }
 
   .footer-container {
-    padding-left: 15px; /* Сбрасываем планшетный паддинг */
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
     flex-wrap: nowrap; /* Всё в одну линию */
     gap: 0;
   }
