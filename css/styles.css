@@ -1242,6 +1242,11 @@ button {
   fill: #ffffff; /* Иконка внутри станет белой */
 }
 
+.menu-close-btn:hover .menu-close-icon,
+.menu-close-btn:focus .menu-close-icon {
+  fill: #ffffff; /* Цвет при ховере */
+}
+
 /* Стили для самой иконки-крестика */
 .menu-close-icon {
   fill: #2e2f42;
