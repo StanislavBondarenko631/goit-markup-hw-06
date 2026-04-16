@@ -75,7 +75,6 @@ button {
 .flex-container {
   display: flex;
   align-items: center;
-  /* Лого слева, бургер справа */
   justify-content: space-between;
 }
 
@@ -89,6 +88,7 @@ button {
   text-decoration: none;
   color: #4d5ae5;
   /* На мобилке хедер чуть компактнее */
+  display: block;
   padding: 16px 0;
 }
 
@@ -152,7 +152,6 @@ button {
     position: relative;
   }
 
-  /* На планшете контакты идут в колонку по макету GoIT */
   .contacts-list {
     display: flex;
     flex-direction: column;
